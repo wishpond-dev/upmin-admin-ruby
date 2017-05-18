@@ -17,7 +17,7 @@
     $name: nth($color, 1);
     $hex: nth($color, 2);
 
-    &.#{$name} {
+    &.#{"" + $name} {
       border-left-color: $hex;
       > h3, > h4 {
         color: $hex;
