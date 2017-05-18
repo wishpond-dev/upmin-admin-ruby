@@ -2,15 +2,15 @@ require_dependency "upmin/application_controller"
 
 module Upmin
   class ModelsController < ApplicationController
-    before_filter :set_klass, only: [:new, :create, :show, :update, :destroy, :search, :action]
-    before_filter :set_model, only: [:show, :update, :destroy, :action]
+    before_action :set_klass, only: [:new, :create, :show, :update, :destroy, :search, :action]
+    before_action :set_model, only: [:show, :update, :destroy, :action]
 
-    before_filter :set_page, only: [:search]
-    before_filter :set_query, only: [:search]
-    before_filter :set_q_for_form_values, only: [:search]
+    before_action :set_page, only: [:search]
+    before_action :set_query, only: [:search]
+    before_action :set_q_for_form_values, only: [:search]
 
-    before_filter :set_action, only: [:action]
-    before_filter :set_arguments, only: [:action]
+    before_action :set_action, only: [:action]
+    before_action :set_arguments, only: [:action]
 
     # GET /:model_name/:id
     def show
