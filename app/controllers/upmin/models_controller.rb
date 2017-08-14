@@ -116,6 +116,10 @@ module Upmin
     end
 
   private
+      def back_url
+        request.referrer
+      end
+
       # TODO(jon): Make the search form fill better than openstruct impl.
       # Temporarily preserve most search form values. This will break if
       # someone wants to search for "2014-09-05" as a string :(
